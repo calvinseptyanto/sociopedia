@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
-import { Edit } from "@mui/icons-material";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("First Name is required"),
