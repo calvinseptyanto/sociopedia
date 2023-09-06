@@ -36,7 +36,7 @@ const Navbar = () => {
   const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
-  const primaryLight = theme.palette.primary;
+  const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
@@ -45,20 +45,25 @@ const Navbar = () => {
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
         <Typography
-          fontWeight={"bold"}
+          fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
-          color={"primary"}
+          color="primary"
           onClick={() => navigate("/home")}
-          sx={{ "&:hover": { cursor: "pointer", color: primaryLight } }}
+          sx={{
+            "&:hover": {
+              color: primaryLight,
+              cursor: "pointer",
+            },
+          }}
         >
           Sociopedia
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
             backgroundColor={neutralLight}
-            borderRadius={"9px"}
+            borderRadius="9px"
             gap="3rem"
-            padding={"0.1rem 1.5rem"}
+            padding="0.1rem 1.5rem"
           >
             <InputBase placeholder="Search..." />
             <IconButton>
@@ -67,7 +72,8 @@ const Navbar = () => {
           </FlexBetween>
         )}
       </FlexBetween>
-      {/* DESKTOP */}
+
+      {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
           <IconButton onClick={() => dispatch(setMode())}>
@@ -112,6 +118,7 @@ const Navbar = () => {
           <Menu />
         </IconButton>
       )}
+
       {/* MOBILE NAV */}
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
@@ -125,19 +132,20 @@ const Navbar = () => {
           backgroundColor={background}
         >
           {/* CLOSE ICON */}
-          <Box display={"flex"} justifyContent={"flex-end"} p="1rem">
+          <Box display="flex" justifyContent="flex-end" p="1rem">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
             >
               <Close />
             </IconButton>
           </Box>
+
           {/* MENU ITEMS */}
           <FlexBetween
             display="flex"
             flexDirection="column"
             justifyContent="center"
-            alignItems={"center"}
+            alignItems="center"
             gap="3rem"
           >
             <IconButton

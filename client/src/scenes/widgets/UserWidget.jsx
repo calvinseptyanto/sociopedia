@@ -32,7 +32,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
   useEffect(() => {
     getUser();
-  }, []); //eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!user) {
     return null;
@@ -50,7 +50,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
   return (
     <WidgetWrapper>
-      {/*FIRST ROW */}
+      {/* FIRST ROW */}
       <FlexBetween
         gap="0.5rem"
         pb="1.1rem"
